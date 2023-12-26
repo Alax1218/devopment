@@ -1,0 +1,13 @@
+.account-container {
+  max-width: 789px;
+}
+.account-container .heading {
+  border-bottom: 3px solid;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  width: -webkit-max-content;
+  width: max-content;
+}
+/*# sourceMappingURL=89.0e287d1f.chunk.css.map*/
