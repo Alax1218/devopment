@@ -1,0 +1,32 @@
+name: auto build process
+
+on: push
+
+branch: dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: configure aws
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID_test }}"
+          aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY_test }}"
+          aws-region: us-east-1
+
+      - name: deploy on s3 bucket
+        run: "aws s3 sync ./build s3://testingbucket1252"
