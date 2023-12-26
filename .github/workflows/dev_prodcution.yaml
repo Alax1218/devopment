@@ -5,11 +5,8 @@ name: auto build process
       - dev
 jobs:
   deploy:
-    runs-on:
-      - self-hosted
-      - Linux
-      - x64
-      - devrunner001
+    runs-on: [self-hosted, Linux, x64, devrunner001]
+
     steps:
       - name: checkout
         uses: actions/checkout@v2
