@@ -1,0 +1,47 @@
+@import '../../../../../stylesheet/base.scss';
+
+.client-container {
+    background-color: $main-card-bg;
+    padding: 20px;
+    border-radius: 20px;
+
+    .headings {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        h3 {
+            @include font($f-size-18, $white, $font-Montserrat-Medium);
+            font-weight: bold;
+            @include for-mobile-992-max {
+                @include font($f-size-15, $white, $font-Montserrat-Medium);
+            }
+
+            @include for-mobile-767-down {
+                display: none;
+            }
+        }
+
+        .empty {
+            flex: 2.5;
+        }
+        .steps {
+            flex: 1.15;
+        }
+
+        .workout {
+            flex: 0.97;
+        }
+
+        .nutrition {
+            flex: 0.85;
+        }
+    }
+
+    &.display-hidden {
+        background-color: transparent;
+        border-radius: unset;
+        padding-bottom: 0;
+        margin-bottom: -20px;
+    }
+}

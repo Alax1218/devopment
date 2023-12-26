@@ -1,0 +1,118 @@
+@import '../../../../stylesheet/base.scss';
+
+.feedback-card-container {
+    padding: 10px;
+    background-color: transparent;
+    min-width: 350px;
+    @include for-mobile-481-down {
+        min-width: 0px;
+    }
+    .content {
+        background-color: $grey-7;
+        border-radius: 10px;
+        padding: 15px;
+
+        .routine {
+            padding-left: 20px;
+            @include font($f-size-18, $green-1, $font-Montserrat-SemiBold);
+            line-height: $f-size-20;
+        }
+        .attribute-heading {
+            text-align: center;
+            @include font($f-size-12, $grey-4, $font-Montserrat-Medium);
+            line-height: $f-size-20;
+        }
+        .attribute-text {
+            text-align: center;
+            @include font($f-size-12, $grey-4, $font-Montserrat-Regular);
+            line-height: $f-size-20;
+        }
+        .feedback-heading {
+            @include font($f-size-13, $grey-4, $font-Montserrat-Medium);
+            line-height: $f-size-20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .form-row {
+            //padding-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .video-container {
+            padding: 10px;
+            padding-top: 20px;
+        }
+        .comment-box {
+            background-color: $grey-8;
+            display: flex;
+            padding: 10px;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 95%;
+            border-width: 0;
+            border-radius: 10px;
+            @include font($f-size-12, $grey-4, $font-Montserrat-Regular);
+            line-height: $f-size-20;
+        }
+
+        .audio-player {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 80%;
+        }
+    }
+
+    .heading {
+        display: flex;
+        //justify-content: space-around;
+        > * {
+            flex: 1;
+            margin: 4px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            //width: 60px;
+            @include font($f-size-13, white, $font-Montserrat-Medium);
+        }
+    }
+
+    .body {
+        .set-row {
+            display: flex;
+            justify-content: space-around;
+            > * {
+                flex: 1;
+                text-align: center;
+            }
+
+            .rep,
+            .weight {
+                @include font($f-size-13, white, $font-Montserrat-Medium);
+                display: flex;
+                text-align: center;
+                background-color: $grey-8;
+                border-radius: 5px;
+                margin: 4px;
+                padding: 2px;
+                .left {
+                    flex: 1;
+                    color: $grey-3;
+                    margin: auto;
+                }
+
+                .right {
+                    flex: 1;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: transparent;
+}
